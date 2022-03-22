@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AboutHeader.module.css';
-import profilePicture from '../../../public/images/profile_picture.png';
+import profilePicture from '../../../public/images/profile_picture.jpg';
 
 export function AboutHeader() {
   return (
