@@ -9,6 +9,7 @@ export function AboutHeader() {
         <h2>Guillaume Fay</h2>
         <h4>Sofware engineer</h4>
       </div>
+      {/* eslint-disable @next/next/no-img-element */}
       <img src={profilePicture.src} alt="Guillaume Fay" />
     </div>
   );

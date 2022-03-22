@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <div className={styles.about}>
           <AboutHeader />
           <h4 className={styles.headLine}>
-            Hi there 👋 <br /> I'm a full-stack engineer based in France.
+            Hi there 👋 <br /> I&apos;m a full-stack engineer based in France.
           </h4>
           <Section
             title="About me"
