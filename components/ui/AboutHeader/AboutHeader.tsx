@@ -1,0 +1,15 @@
+import React from 'react';
+import styles from './AboutHeader.module.css';
+import profilePicture from '../../../public/images/profile_picture.png';
+
+export function AboutHeader() {
+  return (
+    <div className={styles.container}>
+      <div>
+        <h2>Guillaume Fay</h2>
+        <h4>Sofware engineer</h4>
+      </div>
+      <img src={profilePicture.src} alt="Guillaume Fay" />
+    </div>
+  );
+}
