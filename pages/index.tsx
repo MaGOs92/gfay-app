@@ -8,6 +8,7 @@ import LinkedInIcon from '../public/icons/linkedin.svg';
 import GithubIcon from '../public/icons/github.svg';
 import { Footer } from '../components/layout/Footer/Footer';
 import { AboutHeader } from '../components/ui/AboutHeader/AboutHeader';
+import { Connect4 } from '../components/ui/Connect4/Connect4';
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +24,7 @@ const Home: NextPage = () => {
             title="About me"
             content="I'm a freelance sofware engineer base in Amboise, France. I have
               worked in web development since 2014 in various companies until I
-              became freelance in 2021. I enjoy solving real-life problems and
+              became freelance in 2021. I enjoy solving real-life problems with code and
               designing efficient programs."
           />
           <Section
@@ -50,7 +51,9 @@ const Home: NextPage = () => {
             }
           />
         </div>
-        <div className={styles.game}></div>
+        <div className={styles.game}>
+          <Connect4 />
+        </div>
       </main>
       <Footer />
     </div>

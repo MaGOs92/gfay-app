@@ -9,10 +9,9 @@ export function Head() {
         name="description"
         content="Guillaume Fay - Freelance Sofware engineer - Full stack developper"
       />
-      {/* eslint-disable @next/next/no-page-custom-font */}
       {/* <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=optional"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
       /> */}
       <link rel="icon" href="/favicon.ico" />
     </NextHead>
