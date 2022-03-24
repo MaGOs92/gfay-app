@@ -1,17 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
-import { GameState, Player } from './logic/connect4.types';
-import { checkWin, createBoard, playColumn } from './logic/connect4.utils';
-import { MinMax } from './logic/min-max';
+import { GameState, Player } from './connect4.types';
+import { checkWin, createBoard, playColumn } from './utils/connect4.utils';
+import { getNextMove } from './utils/minmax.utils';
 
 export function useConnect4() {
   const boardRef = useRef(createBoard());
-  const ia = useRef(new MinMax(4));
   const [isHumanTurn, setIsHumanTurn] = useState(true);
   const [gameState, setGameState] = useState<GameState>(GameState.PLAYING);
 
   useEffect(() => {
     if (!isHumanTurn && gameState === GameState.PLAYING) {
-      const IAMove = ia.current.getNextMove(boardRef.current) as number;
+      const IAMove = getNextMove(boardRef.current, 4) as number;
       boardRef.current = playColumn(IAMove, Player.IA, boardRef.current);
       setGameState(checkWin(boardRef.current));
       setIsHumanTurn(true);

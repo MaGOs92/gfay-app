@@ -10,6 +10,7 @@
 
 .about {
   width: 33%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   padding: 20px;

@@ -1,80 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Connect4.module.css';
-import { GameState, Player } from './logic/connect4.types';
+import { GameState } from './connect4.types';
+import { Token } from './Token/Token';
 import { useConnect4 } from './useConnect4';
 
 export function Connect4() {
-  const { play, gameState, board } = useConnect4();
+  const [hoveredColumn, setHoveredColumn] = useState<number | null>(null);
+  const { play, gameState, board, isHumanTurn } = useConnect4();
 
   const columnIndices = [0, 1, 2, 3, 4, 5, 6];
   const rowIndices = [5, 4, 3, 2, 1, 0];
 
-  const getInnerCaseClassName = (columnIndex: number, rowIndex: number) => {
-    switch (board[columnIndex][rowIndex]) {
-      case Player.HUMAN:
-        return styles.rouge;
-      case Player.IA:
-        return styles.jaune;
-      default:
-        return styles.vide;
+  const previewNextMove = (columnIndex: number, rowIndex: number) => {
+    if (
+      hoveredColumn !== columnIndex ||
+      !isHumanTurn ||
+      gameState !== GameState.PLAYING
+    ) {
+      return;
     }
+
+    return (
+      board[columnIndex][rowIndex] === 0 &&
+      (rowIndex === 0 ||
+        board[columnIndex][rowIndex - 1] === 1 ||
+        board[columnIndex][rowIndex - 1] === 2)
+    );
   };
 
   return (
     <div className={styles.container}>
-      <div>
-        <table>
-          <thead>
-            <tr className={styles.selector}>
-              {columnIndices.map((columnIndex) => (
-                <th
-                  key={`selector-${columnIndex}`}
-                  className={styles.case}
-                  onClick={() => play(columnIndex)}
-                ></th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rowIndices.map((rowIndex) => {
-              return (
-                <tr key={`row-${rowIndex}`}>
-                  {columnIndices.map((columnIndex) => (
-                    <td
-                      key={`case-${columnIndex}${rowIndex}`}
-                      className={styles.case}
-                    >
-                      <div
-                        className={`${styles.innerCase} ${getInnerCaseClassName(
-                          columnIndex,
-                          rowIndex
-                        )}`}
-                      ></div>
-                    </td>
-                  ))}
-                </tr>
-              );
-            })}
-            <tr>
-              <td>
-                <div className={styles.pied}></div>
-              </td>
-              <td>
-                <div></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div className={styles.pied}></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div className={styles.game}>
+        <div className={styles.board}>
+          {rowIndices.map((rowIndex) => {
+            return (
+              <div className={styles.row} key={`row-${rowIndex}`}>
+                {columnIndices.map((columnIndex) => (
+                  <div
+                    key={`case-${columnIndex}${rowIndex}`}
+                    className={styles.case}
+                    onMouseEnter={() => setHoveredColumn(columnIndex)}
+                    onMouseLeave={() => setHoveredColumn(null)}
+                    onClick={() => play(columnIndex)}
+                  >
+                    <div className={styles.innerCase}>
+                      {board[columnIndex][rowIndex] !== 0 && (
+                        <Token player={board[columnIndex][rowIndex]} />
+                      )}
+                      {previewNextMove(columnIndex, rowIndex) && (
+                        <Token player={1} isPreview={true} />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.boardBottom}>
+          <div className={styles.foot}></div>
+          <div className={styles.foot}></div>
+        </div>
       </div>
+
       <div className={styles.info}>
-        <div>
+        <div className={styles.innerInfo}>
           {gameState === GameState.HUMAN_WON && <p>Nice one!</p>}
           {gameState === GameState.IA_WON && <p>IA won this time...</p>}
           {gameState === GameState.TIE && <p>Draw game</p>}

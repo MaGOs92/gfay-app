@@ -1,0 +1,36 @@
+.yellow {
+  background-color: #a98f00;
+}
+
+.innerYellow {
+  background-color: #f9da2b;
+}
+
+.red {
+  background-color: #760006;
+}
+
+.innerRed {
+  background-color: #c3000a;
+}
+
+.previewToken {
+  opacity: 50%;
+}
+
+.token {
+  position: relative;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  top: 10%;
+  right: 10%;
+  height: 80%;
+  width: 80%;
+}

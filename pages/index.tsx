@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import { Head } from '../components/layout/Head/Head';
-import profilePicture from '../public/profile_picture.jpeg';
 import { Section } from '../components/ui/Section/Section';
 import { LinkButton } from '../components/ui/LinkButton/LinkButton';
 import LinkedInIcon from '../public/icons/linkedin.svg';

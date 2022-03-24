@@ -1,4 +1,4 @@
-import { Connect4Board, GameState, Player } from './connect4.types';
+import { Connect4Board, GameState, Player } from '../connect4.types';
 
 export function createBoard(): Connect4Board {
   var board = new Array();
