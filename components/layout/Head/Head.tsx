@@ -4,10 +4,10 @@ import NextHead from 'next/head';
 export function Head() {
   return (
     <NextHead>
-      <title>Guillaume Fay - Freelance Sofware engineer</title>
+      <title>Guillaume Fay - Freelance Software engineer</title>
       <meta
         name="description"
-        content="Guillaume Fay - Freelance Sofware engineer - Full stack developper"
+        content="Guillaume Fay - Freelance Software engineer - Full stack developper"
       />
       {/* <link
         rel="stylesheet"
