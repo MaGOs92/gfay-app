@@ -19,18 +19,16 @@
 }
 
 .token {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   height: 100%;
   width: 100%;
 }
 
 .inner {
-  position: absolute;
   border-radius: 50%;
-  z-index: 1;
-  top: 10%;
-  right: 10%;
   height: 80%;
   width: 80%;
 }
