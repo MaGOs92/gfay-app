@@ -3,9 +3,14 @@ import { GameState, Player } from '../Connect4/connect4.types';
 import { useConnect4 } from '../Connect4/useConnect4';
 import * as THREE from 'three';
 
-export function Connect43d() {
+interface IProps {
+  onPlayed?: (gameState: GameState) => void;
+  iaDifficulty?: number;
+}
+
+export function Connect43d({ iaDifficulty = 4 }: IProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const { play, gameState, board } = useConnect4();
+  const { play, gameState, board } = useConnect4(iaDifficulty);
 
   useEffect(() => {
     if (canvasRef.current) {
