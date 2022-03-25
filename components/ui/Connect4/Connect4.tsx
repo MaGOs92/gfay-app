@@ -4,9 +4,14 @@ import { GameState } from './connect4.types';
 import { Token } from './Token/Token';
 import { useConnect4 } from './useConnect4';
 
-export function Connect4() {
+interface IProps {
+  onPlayed?: (gameState: GameState) => void;
+  iaDifficulty?: number;
+}
+
+export function Connect4({ onPlayed, iaDifficulty = 4 }: IProps) {
   const [hoveredColumn, setHoveredColumn] = useState<number | null>(null);
-  const { play, gameState, board, isHumanTurn } = useConnect4();
+  const { play, gameState, board, isHumanTurn } = useConnect4(iaDifficulty);
 
   const columnIndices = [0, 1, 2, 3, 4, 5, 6];
   const rowIndices = [5, 4, 3, 2, 1, 0];
@@ -41,7 +46,12 @@ export function Connect4() {
                     className={styles.case}
                     onMouseEnter={() => setHoveredColumn(columnIndex)}
                     onMouseLeave={() => setHoveredColumn(null)}
-                    onClick={() => play(columnIndex)}
+                    onClick={() => {
+                      play(columnIndex);
+                      if (onPlayed) {
+                        onPlayed(gameState);
+                      }
+                    }}
                   >
                     <div className={styles.innerCase}>
                       {board[columnIndex][rowIndex] !== 0 && (

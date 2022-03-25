@@ -7,7 +7,7 @@ export function AboutHeader() {
     <div className={styles.container}>
       <div>
         <h2>Guillaume Fay</h2>
-        <h4>Sofware engineer</h4>
+        <h4>Software engineer</h4>
       </div>
       {/* eslint-disable @next/next/no-img-element */}
       <img src={profilePicture.src} alt="Guillaume Fay" />
