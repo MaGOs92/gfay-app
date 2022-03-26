@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Connect4.module.css';
+import styles from './Connect4.module.scss';
 import { GameState } from './connect4.types';
 import { Token } from './Token/Token';
 import { useConnect4 } from './useConnect4';

@@ -1,17 +1,19 @@
+@import '../connect4.variables.scss';
+
 .yellow {
-  background-color: #a98f00;
+  background-color: $ia-color;
 }
 
 .innerYellow {
-  background-color: #f9da2b;
+  background-color: $ia-lighter-color;
 }
 
 .red {
-  background-color: #760006;
+  background-color: $player-color;
 }
 
 .innerRed {
-  background-color: #c3000a;
+  background-color: $player-lighter-color;
 }
 
 .previewToken {

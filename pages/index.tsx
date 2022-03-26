@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import { Head } from '../components/layout/Head/Head';
 import { Section } from '../components/ui/Section/Section';
 import { LinkButton } from '../components/ui/LinkButton/LinkButton';

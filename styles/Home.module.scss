@@ -1,6 +1,8 @@
+@import './variables.module.scss';
+
 .container {
   height: 100%;
-  background-color: #2e294e;
+  background-color: $background-color;
 }
 
 .main {
@@ -16,14 +18,14 @@
   padding: 20px;
   height: 100%;
   overflow-y: scroll;
-  background-color: #2e294e;
+  background-color: $background-color;
 }
 
 .headLine {
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  background-color: #9055a2;
+  background-color: $primary-color;
   font-weight: 400;
 }
 

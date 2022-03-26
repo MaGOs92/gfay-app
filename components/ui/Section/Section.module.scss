@@ -1,6 +1,8 @@
+@import '../../../styles//variables.module.scss';
+
 .container > h3 {
   text-decoration: underline;
-  text-decoration-color: #9055a2;
+  text-decoration-color: $primary-color;
   text-decoration-thickness: 3px;
 }
 

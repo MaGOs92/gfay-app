@@ -1,3 +1,6 @@
+@import '../../../styles//variables.module.scss';
+@import './connect4.variables.scss';
+
 .container {
   height: 100%;
   display: flex;
@@ -11,14 +14,14 @@
   border-radius: 50%;
   height: 100%;
   width: 100%;
-  background-color: #2e294e;
+  background-color: $background-color;
 }
 
 .case {
   width: 75px;
   height: 75px;
-  border: 6px solid #043dcb;
-  background-color: #043dcb;
+  border: 6px solid $board-color;
+  background-color: $board-color;
 }
 
 .row {
@@ -51,8 +54,8 @@
   margin-top: -2px;
   width: 75px;
   height: 30px;
-  border: 5px solid #043dcb;
-  background-color: #043dcb;
+  border: 5px solid $board-color;
+  background-color: $board-color;
   border-radius: 50% 50% 5px 5px;
 }
 

@@ -1,0 +1,13 @@
+// First version
+$primary-color: #177980;
+$background-color: #0b3142;
+
+// Second version
+// $primary-color: #82a3ba;
+// $background-color: #2e294e;
+
+// To import the variables in tsx components
+:export {
+  primaryColor: $primary-color;
+  backgroundColor: $background-color;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LinkButton.module.css';
+import styles from './LinkButton.module.scss';
 
 interface IProps extends React.HTMLProps<HTMLAnchorElement> {
   label: string;

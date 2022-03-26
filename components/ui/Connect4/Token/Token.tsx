@@ -1,6 +1,6 @@
 import React from 'react';
 import { Player } from '../connect4.types';
-import styles from './Token.module.css';
+import styles from './Token.module.scss';
 
 interface IProps {
   player: Player;
